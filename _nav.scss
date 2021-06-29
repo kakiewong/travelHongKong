@@ -1,0 +1,61 @@
+$primary-font: 'Benne', serif;
+$sec-font: 'Raleway', sans-serif;
+$primary-color: #fff;
+$bg-color: rgb(31, 31, 31);
+$overlay-color: rgb(59, 59, 59);
+
+.nav {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat( 12, 1fr);
+    background-color: $bg-color;
+    color: $primary-color;
+    font-family: $primary-font;
+    z-index: 100;
+
+    h2 {
+        grid-column: 1 / span 3;
+        font-size: 1.5em;
+        letter-spacing: 0.15em;
+        line-height: 1.35em;
+        padding: 0.05em 0.2em;
+    }
+    
+    ul {
+        grid-column: 4 / span 9;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end
+    }
+
+    li {
+        list-style: none;
+        text-decoration: underline;
+        letter-spacing: 0.125em;
+        cursor: pointer;
+
+        a {
+            color: $primary-color;
+        }
+    }
+
+}
+
+@media(min-width: 630px) {
+    .nav{
+        h2{
+            font-size: 2em;
+            grid-column: 1 / span 6;
+            align-self: end;
+        }
+
+        ul {
+            grid-column: 7 / span 5;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-end
+        }
+    }
+}

@@ -1,0 +1,79 @@
+$primary-font: 'Benne', serif;
+$sec-font: 'Raleway', sans-serif;
+$primary-color: #fff;
+$bg-color: rgb(31, 31, 31);
+$overlay-color: rgb(59, 59, 59);
+
+@use 'nav';
+@use 'front';
+@use 'back';
+@use 'arrive';
+
+@mixin background{
+    background-color:$overlay-color;
+    background-blend-mode: overlay;
+    height: 100vh;
+    min-height: 730px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+#arrive {
+    @include background;
+    background-image: url("./assets/img/arrive.jpg");
+    background-position: center;
+}
+
+#stay {
+    @include background;
+    background-image: url("./assets/img/stay.jpg");
+    background-position: 65% 0%;
+   
+}
+#eat {
+    @include background;
+    background-image: url("./assets/img/eat.jpg");
+    background-position: 55% 0;
+    @media(min-width:1000px){
+        background-position: bottom;
+    }
+}
+#shop {
+    @include background;
+    background-image: url("./assets/img/shop.jpg");
+    background-position: center;
+}
+
+.btn {
+    font-family: $primary-font;
+    font-size: 1.15em;
+    text-decoration: underline;
+    color: $primary-color;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0 0.7em;
+    cursor: pointer;
+}
+
+.link {
+    display: inline-block;
+    color: $primary-color;
+    cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
